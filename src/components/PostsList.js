@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 class PostsList extends Component {
   render() {
-    const {posts} = this.props;
+    const { posts } = this.props;
     return (
       <div className="posts-list">
         {posts.map((post) => (
@@ -11,7 +11,7 @@ class PostsList extends Component {
             <div className="post-header">
               <div className="post-avatar">
                 <img
-                  src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+                  src="C:\Users\chaud\Desktop\file\codeial\src\components\img-1.png"
                   alt="user-pic"
                 />
                 <div>
@@ -62,7 +62,7 @@ class PostsList extends Component {
 }
 
 PostsList.propTypes = {
-    posts:PropTypes.array.isRequired,
-}
+  posts: PropTypes.array.isRequired,
+};
 
 export default PostsList;
