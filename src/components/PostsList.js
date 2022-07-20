@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import {Link} from 'react-router-dom'
+import dp from '../helpers/img-1.png'
+import like from '../helpers/like-icon.png'
+import comment from '../helpers/comment.png'
 
 class PostsList extends Component {
   render() {
@@ -10,10 +14,12 @@ class PostsList extends Component {
           <div className="post-wrapper" key={post._id}>
             <div className="post-header">
               <div className="post-avatar">
-                <img
-                  src="C:\Users\chaud\Desktop\file\codeial\src\components\img-1.png"
-                  alt="user-pic"
-                />
+                <Link to={`/user/${post.user._id}`}>
+                  <img
+                    src={dp}
+                    alt="user-pic"
+                  />
+                </Link>
                 <div>
                   <span className="post-author">{post.user.name}</span>
                   <span className="post-time">a minute ago</span>
@@ -23,18 +29,12 @@ class PostsList extends Component {
 
               <div className="post-actions">
                 <div className="post-like">
-                  <img
-                    src="https://image.flaticon.com/icons/svg/1077/1077035.svg"
-                    alt="likes-icon"
-                  />
+                  <img alt="likes-icon" src={like}/>
                   <span>{post.likes.length}</span>
                 </div>
 
                 <div className="post-comments-icon">
-                  <img
-                    src="https://image.flaticon.com/icons/svg/1380/1380338.svg"
-                    alt="comments-icon"
-                  />
+                  <img alt="comments-icon" src={comment} />
                   <span>{post.comments.length}</span>
                 </div>
               </div>
